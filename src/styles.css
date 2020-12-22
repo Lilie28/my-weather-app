@@ -1,0 +1,155 @@
+html {
+  text-align: center;
+}
+
+body {
+  display: inline-block;
+}
+
+.container {
+  border: 5px solid rgb(1, 110, 198);
+  border-radius: 10px;
+  margin: 0 auto;
+  min-width: 500px;
+  max-width: 30%;
+  padding: 20px 30px;
+}
+
+.button-current-location {
+  display: inline;
+  border: white;
+  background-color: white;
+  color: red;
+}
+
+.search-input {
+  width: 58%;
+  height: 26px;
+  border-radius: 4px;
+  position: relative;
+  left: 160px;
+  top: -25px;
+  display: inline;
+  border-color: rgb(1, 110, 198);
+}
+
+.search-button {
+  background: #c7f4ff;
+  text-align: center;
+  height: 26px;
+  width: 30px;
+  border: none;
+  border-radius: 4px;
+  transition: all 200ms ease-in-out;
+  position: relative;
+  left: 160px;
+  top: -25px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.heart {
+  color: rgb(5, 70, 131);
+  position: relative;
+  top: -30px;
+  left: 6px;
+}
+
+.todayDate {
+  text-align: center;
+}
+
+.sunrise-sunset {
+  text-align: center;
+  font-size: 14px;
+}
+
+#celsius-link {
+  font-size: 40px;
+  color: yellow;
+  letter-spacing: -6px;
+  position: relative;
+  left: 10px;
+  top: 26px;
+}
+
+.temperature-settings {
+  background: rgb(73, 140, 196);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: 0 50px;
+}
+
+.current-temperature {
+  font-size: 40px;
+  background-color: red;
+  color: greenyellow;
+  position: relative;
+  left: 15px;
+  top: 26px;
+}
+
+#fahrenheit-link {
+  color: rgb(255, 38, 0);
+  background: rgb(165, 42, 165);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
+  padding: 10px 10px;
+  position: relative;
+  left: 50px;
+  top: 55px;
+}
+
+.emoji-current-weather {
+  font-size: 80px;
+  margin-top: 20px;
+  text-align: center;
+  margin-left: 220px;
+  margin-top: -90px;
+  line-height: 0;
+}
+
+.current-weather-description {
+  font-weight: normal;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 220px;
+}
+
+.updated {
+  font-size: 10px;
+  position: relative;
+  margin: 0 50px;
+  top: 15px;
+}
+
+.parameters {
+  padding: 10px 10px;
+  border: 2px solid rgb(1, 110, 198);
+  text-align: left;
+  width: 100%;
+}
+
+.air-quality {
+  width: 100%;
+  height: 10px;
+}
+
+.forecast {
+  width: 100%;
+  text-align: center;
+}
+
+.forecast-temperature-min {
+  font-size: 12px;
+}
+
+.forecast-emojis {
+  font-size: 30px;
+}
