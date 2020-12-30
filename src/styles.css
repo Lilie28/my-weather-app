@@ -13,13 +13,14 @@ body {
   min-width: 500px;
   max-width: 30%;
   padding: 20px 30px;
+  background-color: #c7f4ff;
 }
 
 .button-current-location {
   display: inline;
-  border: white;
-  background-color: white;
-  color: red;
+
+  border-color: cornflowerblue;
+  background-color: #c7f4ff;
 }
 
 .search-input {
@@ -34,7 +35,7 @@ body {
 }
 
 .search-button {
-  background: #c7f4ff;
+  background: rgba(0, 102, 255, 0.5);
   text-align: center;
   height: 26px;
   width: 30px;
@@ -85,7 +86,6 @@ h1 {
 
 .current-temperature {
   font-size: 40px;
-  background-color: red;
   color: greenyellow;
   position: relative;
   left: 15px;
@@ -93,7 +93,7 @@ h1 {
 }
 
 #fahrenheit-link {
-  color: rgb(255, 38, 0);
+  color: rgb(99, 13, 27);
   background: rgb(165, 42, 165);
   border-radius: 50%;
   width: 60px;
@@ -106,17 +106,25 @@ h1 {
 }
 
 #emoji-current-weather {
-  font-size: 400px;
+  width: 150px;
+  height: 150px;
+  float: right;
+  margin-top: -140px;
+  margin-right: 50px;
+  padding: none;
 }
 
 .current-weather-description {
-  font-weight: normal;
-  font-size: 15px;
+  font-size: 18px;
+  float: right;
+  margin-right: -100px;
+  margin-top: -22px;
 }
 
 .updated {
-  font-size: 10px;
-  position: relative;
+  font-size: 12px;
+  margin-top: 70px;
+  width: 200px;
 }
 
 .parameters {
@@ -142,4 +150,8 @@ h1 {
 
 .forecast-emojis {
   font-size: 30px;
+}
+
+.open-source {
+  font-size: 15px;
 }
