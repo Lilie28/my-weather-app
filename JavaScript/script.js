@@ -60,6 +60,13 @@ document.querySelector("#current-location-name").innerHTML=response.data.name;
   document.querySelector(".current-weather-description").innerHTML=response.data.weather[0].main;
   //document.querySelector("#sunrise").innerHTML=response.data.sys.sunrise;
   //try to convert the sunrise and sunset time
+  let iconElement=document.querySelector("#emoji-current-weather");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
   }
 
 
