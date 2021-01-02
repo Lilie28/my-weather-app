@@ -41,6 +41,22 @@ let currentMonth=months[monthIndex];
 return `${currentDay} ${currentDate} ${currentMonth} <br/> ${hours}:${minutes}`;
 }
 
+//this function has been created for the forecast function
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
+
+
 
 function showWeatherCondition(response){
 document.querySelector(".city").innerHTML=response.data.name;
@@ -70,11 +86,50 @@ document.querySelector("#current-location-name").innerHTML=response.data.name;
   }
 
 
+
+  function displayForecast (response){
+  let forecastElement = document.querySelector("#forecast");
+  //this null thing it is to avoid to add 5 more days under
+  //our 5 days again and again each time we ask for a new city
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  //here we will add a "for" loop, to avoid to repeat 5 times
+  //the same thing (=forecast)
+  for (let index = 0; index < 5; index++) {
+    forecast = response.data.list[index];
+    //+= means we want the innerHTML here PLUS what we will write under it
+    forecastElement.innerHTML += `
+    <div class="col-2">
+      <h6>
+        ${formatHours(forecast.dt * 1000)}
+      </h6>
+      <img
+        src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"
+      />
+      <div class="weather-forecast-temperature">
+        <strong>
+          ${Math.round(forecast.main.temp_max)}°C
+        </strong>
+        ${Math.round(forecast.main.temp_min)}°C
+      </div>
+    </div>
+  `;
+  }
+  }
+
 function defaultCity(cityInput){
   let apiKey= "a156c6c640df016853c05d9f7e81abef"; 
   let units = "metric";
   let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${cityInput}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showWeatherCondition);
+
+  //we make another api call to display the forecast for 
+  //the next 3 hours
+  apiUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${cityInput}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 
