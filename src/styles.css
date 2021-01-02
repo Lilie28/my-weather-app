@@ -84,6 +84,14 @@ h1 {
   margin: 0 50px;
 }
 
+.temperature-settings .active {
+  cursor: default;
+}
+
+.temperature-settings .active:hover {
+  text-decoration: none;
+}
+
 .current-temperature {
   font-size: 40px;
   color: greenyellow;
