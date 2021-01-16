@@ -74,9 +74,13 @@ document.querySelector("#current-location-name").innerHTML=response.data.name;
   document.querySelector("#temp-max").innerHTML=Math.round(response.data.main.temp_max);
   document.querySelector("#temp-min").innerHTML=Math.round(response.data.main.temp_min);
   document.querySelector(".current-weather-description").innerHTML=response.data.weather[0].main;
-  document.querySelector("#sunrise").innerHTML=response.data.sys.sunrise;
-  document.querySelector("#sunset").innerHTML=response.data.sys.sunset;
+  //document.querySelector("#sunrise").innerHTML=response.data.sys.sunrise;
+  document.querySelector("#sunrise").innerHTML=new Date(response.data.sys.sunrise * 1000);
+  document.querySelector("#sunset").innerHTML=new Date (response.data.sys.sunset*1000);
   //try to convert the sunrise and sunset time:
+
+
+
   let iconElement=document.querySelector("#emoji-current-weather");
   iconElement.setAttribute(
     "src",
