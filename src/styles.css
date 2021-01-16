@@ -139,16 +139,14 @@ h1 {
   width: 100%;
 }
 
-#forecast {
-  text-align: center;
+.weather-forecast-temperature {
+  padding: none;
+  margin-left: 55px;
 }
 
-.forecast-temperature-min {
-  font-size: 12px;
-}
-
-.forecast-emojis {
-  font-size: 30px;
+.col-2 {
+  background-color: blue;
+  padding: none;
 }
 
 .open-source {

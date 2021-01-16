@@ -56,6 +56,35 @@ function formatHours(timestamp) {
   return `${hours}:${minutes}`;
 }
 
+//used for the Last updated part:
+function updated(date){
+let updated=now.getDate();
+let hours=now.getHours();
+if (hours<10){
+  hours=`0${hours}`;
+}
+let minutes=now.getMinutes();
+if (minutes<10){
+  minutes=`0${minutes}`;
+}
+return `${hours}:${minutes}`;
+}
+
+//this function has been created for the forecast function
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
+
 
 
 function showWeatherCondition(response){
@@ -77,7 +106,8 @@ document.querySelector("#current-location-name").innerHTML=response.data.name;
   //document.querySelector("#sunrise").innerHTML=response.data.sys.sunrise;
   document.querySelector("#sunrise").innerHTML=new Date(response.data.sys.sunrise * 1000);
   document.querySelector("#sunset").innerHTML=new Date (response.data.sys.sunset*1000);
-  //try to convert the sunrise and sunset time:
+  //try to convert the sunrise and sunset time (above) with *1000
+  // need to make it like: 13:20:
 
 
 
@@ -188,6 +218,10 @@ function convertToCelsius(event){
 let dateElement=document.querySelector(".todayDate");
 let now= new Date();
 dateElement.innerHTML= currentDate(now);
+
+let dateUpdated=document.querySelector("#updated");
+let updatedDate= new Date();
+dateUpdated.innerHTML= updated(now);
 
 
 let searchForm=document.querySelector("#search-form");
