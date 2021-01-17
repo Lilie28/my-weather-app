@@ -6,6 +6,11 @@ body {
   display: inline-block;
   width: 500px;
   padding-top: 15px;
+  background-image: url("images/background_weatherapp.jpeg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
@@ -48,13 +53,6 @@ h1 {
   text-align: center;
 }
 
-.heart {
-  color: rgb(5, 70, 131);
-  position: relative;
-  top: -30px;
-  left: 6px;
-}
-
 .todayDate {
   text-align: center;
 }
@@ -66,20 +64,15 @@ h1 {
 
 #celsius-link {
   font-size: 40px;
-  color: yellow;
-  letter-spacing: -6px;
-  position: relative;
-  left: 10px;
-  top: 26px;
 }
 
-.temperature-settings {
+/*.temperature-settings {
   background: rgb(73, 140, 196);
   border-radius: 50%;
   width: 120px;
   height: 120px;
   margin: 0 50px;
-}
+}*/
 
 .temperature-settings .active {
   cursor: default;
@@ -91,15 +84,12 @@ h1 {
 
 .current-temperature {
   font-size: 40px;
-  color: greenyellow;
   position: relative;
   left: 15px;
   top: 26px;
 }
 
 #fahrenheit-link {
-  color: rgb(99, 13, 27);
-  background: rgb(165, 42, 165);
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -127,26 +117,32 @@ h1 {
 }
 
 .updated {
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 70px;
   width: 200px;
 }
 
 .parameters {
   padding: 10px 10px;
-  border: 2px solid rgb(1, 110, 198);
-  text-align: left;
+  border: 2px dotted rgb(1, 110, 198);
+  text-align: center;
   width: 100%;
 }
 
 .weather-forecast-temperature {
-  padding: none;
-  margin-left: 55px;
+  font-size: 12px;
 }
 
-.col-2 {
-  background-color: blue;
-  padding: none;
+.forecast-icons {
+  width: 60px;
+}
+
+.forecast-for-3hours {
+  text-align: center;
+}
+
+.weather-forecast-temperature {
+  text-align: center;
 }
 
 .open-source {

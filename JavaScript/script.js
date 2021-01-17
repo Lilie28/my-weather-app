@@ -52,7 +52,6 @@ function formatHours(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
   return `${hours}:${minutes}`;
 }
 
@@ -68,21 +67,6 @@ if (minutes<10){
   minutes=`0${minutes}`;
 }
 return `${hours}:${minutes}`;
-}
-
-//this function has been created for the forecast function
-function formatHours(timestamp) {
-  let date = new Date(timestamp);
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
-  return `${hours}:${minutes}`;
 }
 
 
@@ -131,15 +115,15 @@ document.querySelector("#current-location-name").innerHTML=response.data.name;
 
   //here we will add a "for" loop, to avoid to repeat 5 times
   //the same thing (=forecast)
-  for (let index = 0; index < 5; index++) {
+  for (let index = 0; index < 6; index++) {
     forecast = response.data.list[index];
     //+= means we want the innerHTML here PLUS what we will write under it
     forecastElement.innerHTML += `
     <div class="col-2">
-      <h6>
+      <h6 class="forecast-for-3hours">
         ${formatHours(forecast.dt * 1000)}
       </h6>
-      <img
+      <img class="forecast-icons"
         src="http://openweathermap.org/img/wn/${
           forecast.weather[0].icon
         }@2x.png"
@@ -148,6 +132,7 @@ document.querySelector("#current-location-name").innerHTML=response.data.name;
         <strong>
           ${Math.round(forecast.main.temp_max)}°C
         </strong>
+        <br/>
         ${Math.round(forecast.main.temp_min)}°C
       </div>
     </div>
@@ -222,6 +207,12 @@ dateElement.innerHTML= currentDate(now);
 let dateUpdated=document.querySelector("#updated");
 let updatedDate= new Date();
 dateUpdated.innerHTML= updated(now);
+
+
+let dateUpdated1=document.querySelector("#sunset");
+let updatedDate1= new Date();
+dateUpdated1.innerHTML= updated(now);
+
 
 
 let searchForm=document.querySelector("#search-form");
