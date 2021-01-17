@@ -72,11 +72,11 @@ return `${hours}:${minutes}`;
 //this is for the sunset and sunrise hours:
 function sunriseSunsetHours(timestamp){
 let sunriseSunset= new Date (timestamp);
-let hours=now.getHours();
+let hours=sunriseSunset.getHours();
 if (hours<10){
   hours=`0${hours}`;
 }
-let minutes=now.getMinutes();
+let minutes=sunriseSunset.getMinutes();
 if (minutes<10){
   minutes=`0${minutes}`;
 }
@@ -100,11 +100,11 @@ document.querySelector("#current-location-name").innerHTML=response.data.name;
   document.querySelector("#temp-min").innerHTML=Math.round(response.data.main.temp_min);
   document.querySelector(".current-weather-description").innerHTML=response.data.weather[0].main;
   //document.querySelector("#sunrise").innerHTML=response.data.sys.sunrise;
-  document.querySelector("#sunrise").innerHTML=new Date(response.data.sys.sunrise * 1000);
-  document.querySelector("#sunset").innerHTML=new Date (response.data.sys.sunset*1000);
+  document.querySelector("#sunrise").innerHTML=sunriseSunsetHours(response.data.sys.sunrise * 1000);
+  document.querySelector("#sunset").innerHTML=sunriseSunsetHours (response.data.sys.sunset*1000);
   //try to convert the sunrise and sunset time (above) with *1000
   // need to make it like: 13:20:
-${sunriseSunsetHours(forecast.dt * 1000)}
+
 
 
   let iconElement=document.querySelector("#emoji-current-weather");

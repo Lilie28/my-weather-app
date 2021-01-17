@@ -4,25 +4,25 @@ html {
 
 body {
   display: inline-block;
-  width: 500px;
   padding-top: 15px;
-  background-image: url("images/background_weatherapp.jpeg");
-  height: 100%;
-  background-position: center;
+  background-image: url("/Users/Alice/Desktop/SheCodes Plus/SheCodesPlus_weather_app_final/my-weather-app/images/background_weatherapp.jpeg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-color: rgb(223, 69, 94, 0.5);
+  background-size: 100%;
 }
 
 .container {
   border-radius: 10px;
   margin: 0 auto;
-  background-color: #c7f4ff;
+  background-color: rgba(148, 14, 70, 0.7);
   padding: 20px;
+  border: rgb(238, 109, 163);
+  color: white;
 }
 
 .button-current-location {
-  border-color: cornflowerblue;
-  background-color: #c7f4ff;
+  border-color: rgb(238, 109, 163);
+  background-color: rgb(253, 215, 231);
 }
 
 .search-input {
@@ -33,11 +33,11 @@ body {
   left: 160px;
   top: -25px;
 
-  border-color: rgb(1, 110, 198);
+  border-color: rgb(238, 109, 163);
 }
 
 .search-button {
-  background: rgba(0, 102, 255, 0.5);
+  background: rgb(238, 109, 163);
   text-align: center;
   height: 26px;
   width: 30px;
@@ -66,14 +66,6 @@ h1 {
   font-size: 40px;
 }
 
-/*.temperature-settings {
-  background: rgb(73, 140, 196);
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  margin: 0 50px;
-}*/
-
 .temperature-settings .active {
   cursor: default;
 }
@@ -83,13 +75,13 @@ h1 {
 }
 
 .current-temperature {
-  font-size: 40px;
+  font-size: 50px;
   position: relative;
   left: 15px;
   top: 26px;
 }
 
-#fahrenheit-link {
+/*#fahrenheit-link {
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -98,7 +90,7 @@ h1 {
   position: relative;
   left: 50px;
   top: 55px;
-}
+}*/
 
 #emoji-current-weather {
   width: 150px;
@@ -124,7 +116,7 @@ h1 {
 
 .parameters {
   padding: 10px 10px;
-  border: 2px dotted rgb(1, 110, 198);
+  border: 2px dotted rgb(240, 197, 215);
   text-align: center;
   width: 100%;
 }
@@ -145,6 +137,12 @@ h1 {
   text-align: center;
 }
 
+.link-github {
+  color: white;
+  text-decoration: underline;
+}
+
 .open-source {
   font-size: 15px;
+  color: white;
 }
