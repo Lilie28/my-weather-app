@@ -84,6 +84,8 @@ h1 {
 
 .units {
   font-size: 20px;
+
+  vertical-align: 180%;
 }
 
 #celsius-link {
