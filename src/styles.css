@@ -5,7 +5,7 @@ html {
 body {
   display: inline-block;
   padding-top: 15px;
-  background-image: url("/Users/Alice/Desktop/SheCodes Plus/SheCodesPlus_weather_app_final/my-weather-app/images/background_weatherapp.jpeg");
+  background-image: url("../images/background_weatherapp.jpeg");
   background-repeat: no-repeat;
   background-color: rgb(223, 69, 94, 0.5);
   background-size: 100%;
