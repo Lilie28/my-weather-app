@@ -103,7 +103,7 @@ document.querySelector("#current-location-name").innerHTML=response.data.name;
   document.querySelector("#sunrise").innerHTML=sunriseSunsetHours(response.data.sys.sunrise * 1000);
   document.querySelector("#sunset").innerHTML=sunriseSunsetHours (response.data.sys.sunset*1000);
   //try to convert the sunrise and sunset time (above) with *1000
-  // need to make it like: 13:20:
+  
 
 
 
@@ -114,12 +114,16 @@ document.querySelector("#current-location-name").innerHTML=response.data.name;
 );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   celsiusTemperature = response.data.main.temp;
+
+
+ 
   }
 
 
 
   function displayForecast (response){
   let forecastElement = document.querySelector("#forecast");
+
   //this null thing it is to avoid to add 5 more days under
   //our 5 days again and again each time we ask for a new city
   forecastElement.innerHTML = null;
@@ -175,17 +179,22 @@ function searchCity(event){
 }
 
 
-function searchLocation(position) {
+
+  function searchLocation(position) {
   let apiKey = "a156c6c640df016853c05d9f7e81abef";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showWeatherCondition);
+  apiUrl=`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
+
 
 function getCurrentLocation(event){
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
+
 }
 
 
@@ -219,10 +228,6 @@ dateElement.innerHTML= currentDate(now);
 let dateUpdated=document.querySelector("#updated");
 let updatedDate= new Date();
 dateUpdated.innerHTML= updated(now);
-
-
-
-
 
 
 let searchForm=document.querySelector("#search-form");
