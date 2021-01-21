@@ -83,6 +83,7 @@ if (minutes<10){
 return `${hours}:${minutes}`;
 }
 
+
 function showWeatherCondition(response){
 document.querySelector(".city").innerHTML=response.data.name;
 document.querySelector(".current-temperature").innerHTML= Math.round(response.data.main.temp);
@@ -116,7 +117,6 @@ document.querySelector("#current-location-name").innerHTML=response.data.name;
   celsiusTemperature = response.data.main.temp;
 
 
- 
   }
 
 
@@ -166,6 +166,8 @@ function defaultCity(cityInput){
   //the next 3 hours
   apiUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${cityInput}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayForecast);
+
+  
 }
 
 
@@ -179,16 +181,16 @@ function searchCity(event){
 }
 
 
-
-  function searchLocation(position) {
+function searchLocation(position) {
   let apiKey = "a156c6c640df016853c05d9f7e81abef";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showWeatherCondition);
-  apiUrl=`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
+ 
 
 
 function getCurrentLocation(event){
